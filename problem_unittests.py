@@ -90,8 +90,7 @@ def test_tokenize(token_lookup):
     token_dict = token_lookup()
     
     # Check type
-    assert isinstance(token_dict, dict), \
-        'Returned type is {}.'.format(type(token_dict))
+    assert isinstance(token_dict, dict), 'Returned type is {}.'.format(type(token_dict))
 
     # Check symbols
     missing_symbols = symbols - set(token_dict.keys())
@@ -109,10 +108,8 @@ def test_tokenize(token_lookup):
     key_has_spaces = [k for k in token_dict.keys() if ' ' in k]
     val_has_spaces = [val for val in token_dict.values() if ' ' in val]
     
-    assert not key_has_spaces,\
-        'The key "{}" includes spaces. Remove spaces from keys and values'.format(key_has_spaces[0])
-    assert not val_has_spaces,\
-    'The value "{}" includes spaces. Remove spaces from keys and values'.format(val_has_spaces[0])
+    assert not key_has_spaces, 'The key "{}" includes spaces. Remove spaces from keys and values'.format(key_has_spaces[0])
+    assert not val_has_spaces, 'The value "{}" includes spaces. Remove spaces from keys and values'.format(val_has_spaces[0])
     
     # Check for symbols in values
     symbol_val = ()
